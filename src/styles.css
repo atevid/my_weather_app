@@ -45,3 +45,9 @@ li {
 .due {
   padding: 20px;
 }
+
+.codedBy {
+    text-align: center;
+    padding: 20px;
+    font-family: "Blinker", sans-serif;
+}
