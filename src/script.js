@@ -34,16 +34,18 @@ function showTemperature(response) {
 document.querySelector("#city").innerHTML = response.data.name;
 }
 
+function search(city) {
+let apiKey = "126c20b90ebb15582267fe5043978b84";
+let units = "metric";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+axios.get(apiUrl).then(showTemperature);
+}
+
 function showCity(event) {
   event.preventDefault();
-  let yourCity = document.querySelector("#enterCity").value;
-  let h1 = document.querySelector("#city");
-  h1.innerHTML = `${yourCity.value}`;
-  let units = "metric";
-  let apiKey = "126c20b90ebb15582267fe5043978b84";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${yourCity}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showTemperature);
+  let city = document.querySelector("#enterCity").value;
+  search(city);
 }
 
 let city = document.querySelector("#enterYourCity");
@@ -77,6 +79,8 @@ function showCurrentTemperature(response) {
   heading.addEventListener("click", showTemperatureInCity);
 }
 
+
+
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -87,3 +91,5 @@ function showPosition(position) {
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
+
+search ("New York");
