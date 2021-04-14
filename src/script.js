@@ -48,12 +48,11 @@ function showCity(event) {
   search(city);
 }
 
-
 function searchLocation(position) {
 
   let apiKey = "126c20b90ebb15582267fe5043978b84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
+ 
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -71,3 +70,4 @@ let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", showCurrentTemperature)
 
 search ("New York");
+
