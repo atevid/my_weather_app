@@ -1,5 +1,5 @@
 h1 {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 10px;
   padding-left: 30px;
   font-size: 50px;
@@ -58,3 +58,7 @@ li {
   top: -20px;
   left: -5px;
 }
+
+.col-12 {
+  padding: 10px;
+} 
