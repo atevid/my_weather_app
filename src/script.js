@@ -48,48 +48,26 @@ function showCity(event) {
   search(city);
 }
 
+
+function searchLocation(position) {
+
+  let apiKey = "126c20b90ebb15582267fe5043978b84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function showCurrentTemperature(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 let city = document.querySelector("#enterYourCity");
 city.addEventListener("submit", showCity);
 
 //current
 
-function showCurrentTemperature(response) {
-  let currentTemperatureInCity = Math.round(response.data.main.temp);
-  let currentCity = response.data.name;
-  let changeToCurrentCity = document.querySelector("#city");
-  changeToCurrentCity.innerHTML = currentCity;
-  let currentTemperature = Math.round(response.data.main.temp);
-  let changeToCurrentTemperature = document.querySelector("#temperature");
-  changeToCurrentTemperature.innerHTML = currentTemperature;
-  let wind = response.data.wind.speed;
-  let windCondition = document.querySelector("#wind");
-  windCondition.innerHTML = wind;
-  let humidity = response.data.main.humidity;
-  let humidityCondition = document.querySelector("#humidity");
-  humidityCondition.innerHTML = humidity;
-  let condition = response.data.weather[0].description;
-  let currentCondition = document.querySelector("#condition");
-  currentCondition.innerHTML = condition;
-
-  function showTemperatureInCity(event) {
-    event.preventDefault();
-  }
-
-  let heading = document.querySelector("h1");
-  heading.addEventListener("click", showTemperatureInCity);
-}
-
-
-
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = "126c20b90ebb15582267fe5043978b84";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(showCurrentTemperature);
-}
-
-navigator.geolocation.getCurrentPosition(showPosition);
+let currentLocationButton = document.querySelector("#currentLocation");
+currentLocationButton.addEventListener("click", showCurrentTemperature)
 
 search ("New York");
