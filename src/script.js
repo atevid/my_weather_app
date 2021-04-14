@@ -27,28 +27,21 @@ date.innerHTML = `${day} ${hours}:${minutes}`;
 //City and Temperature
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let temperatureData = document.querySelector("#temperature");
-  temperatureData.innerHTML = temperature;
-  let wind = response.data.wind.speed;
-  let windCondition = document.querySelector("#wind");
-  windCondition.innerHTML = wind;
-  let humidity = response.data.main.humidity;
-  let humidityCondition = document.querySelector("#humidity");
-  humidityCondition.innerHTML = humidity;
-  let condition = response.data.weather[0].description;
-  let currentCondition = document.querySelector("#condition");
-  currentCondition.innerHTML = condition;
+ document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+ document.querySelector("#wind").innerHTML = response.data.wind.speed;
+ document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+ document.querySelector("#condition").innerHTML = response.data.weather[0].description;
+document.querySelector("#city").innerHTML = response.data.name;
 }
 
 function showCity(event) {
   event.preventDefault();
-  let yourCity = document.querySelector("#enterCity");
+  let yourCity = document.querySelector("#enterCity").value;
   let h1 = document.querySelector("#city");
   h1.innerHTML = `${yourCity.value}`;
   let units = "metric";
   let apiKey = "126c20b90ebb15582267fe5043978b84";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${yourCity.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${yourCity}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
 }
