@@ -60,5 +60,13 @@ li {
 }
 
 .col-12 {
-  padding: 10px;
+  padding-bottom: 10px;
 } 
+
+.currentDate {
+  text-align: center;
+  color:#0C5ED7;
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+}

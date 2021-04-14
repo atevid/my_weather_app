@@ -69,5 +69,5 @@ city.addEventListener("submit", showCity);
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", showCurrentTemperature)
 
-search ("New York");
+search ("Prague");
 
