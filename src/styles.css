@@ -17,7 +17,14 @@ li {
   padding: 10px;
   font-size: larger;
 }
+
+img {
+  padding: 0;
+}
 .firstinfo li {
+  padding: 0;
+   position: relative;
+  left: -25px;
   padding: 0;
 }
 
@@ -50,6 +57,7 @@ li {
     text-align: center;
     padding: 20px;
     font-family: "Blinker", sans-serif;
+    text-decoration: none;
 }
 
 .unitsSize {
@@ -70,3 +78,4 @@ li {
   margin: 0 auto;
   font-size: 15px;
 }
+

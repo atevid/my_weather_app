@@ -20,8 +20,9 @@
 
 <body>
 <div class="container">
+    <div class="weather-app">
     <span id = "currentDate" class="currentDate"></span>
-    <div class="row uno">
+    <div class="row">
         <div class="col-7">
     <form id="enterYourCity">
         <div class="row due">
@@ -49,20 +50,22 @@
          </div>
 
          </div>
-    </form>
-    <h1>
+        </form>
+        
+        <h1>
         <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize">°C</span> 
-    </h1>
-    <ul class="firstinfo">
-       <li> <span id="condition"></span>  </li>
-    </ul>
-    <ul class="humidytiAndWind">
+        </h1>
+        
+        <p class="firstinfo">
+            <img src="" alt="" id="icon" class="icon"> <span id="condition" class="condition"></span>
+        </p>
+        
+        <ul class="humidytiAndWind">
         <li>Humidity: <span id="humidity"></span> % <br>
         Wind: <span id="wind"></span> km/h</li>    
-    </ul>
-
-   
+        </ul>
     </div>
+
     <div class="col-5">
         <ul class="secondinfo">
             <li>
@@ -83,7 +86,7 @@
         </ul>
     </div>
     </div>
-    
+    </div>
     </div>
 
     <p class="codedBy">
