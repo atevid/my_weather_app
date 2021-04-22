@@ -33,14 +33,7 @@
         class="form-control"
         id="enterCity">
         </div>
-        <div class="col-6">
-         <input 
-         type="submit" 
-         value="Search"
-         class="form-control btn btn-dark w-100"
-         id="search-input">
-         </div>
-
+        
          <div class="col-6">
              <input 
              type="submit"
@@ -49,21 +42,43 @@
              id="currentLocation">
          </div>
 
+         <div class="col-6">
+         <input 
+         type="submit" 
+         value="Search"
+         class="form-control btn btn-dark w-100"
+         id="search-input">
+         </div>
+
+
          </div>
         </form>
         
+        <div class="heading">
         <h1>
         <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize">°C</span> 
         </h1>
-        
-        <p class="firstinfo">
-            <img src="" alt="" id="icon" class="icon"> <span id="condition" class="condition"></span>
-        </p>
-        
-        <ul class="humidytiAndWind">
-        <li>Humidity: <span id="humidity"></span> % <br>
-        Wind: <span id="wind"></span> km/h</li>    
+
+        <div class="row">
+            <div class="col-6">
+         <ul class="humidityAndWind">
+            <li>Humidity: <span id="humidity"></span> % <br>
+                Wind: <span id="wind"></span> km/h</li>    
         </ul>
+            </div>
+            <div class="col-6">
+          <ul>
+              <li class="iconAndCondition">
+                 <img src="" alt="" id="icon" class="icon"> 
+                 <span id="condition" class="condition"></span>
+              </li>
+          </ul>
+            </div>
+        </div>
+        
+
+       
+        </div>
     </div>
 
     <div class="col-5">
