@@ -1,8 +1,10 @@
 .heading {
-  border: 1px solid black;
+  border: 1px solid #1C1F23;
   border-radius: 6px;
   background-color: #1C1F23;
   color: #F3E8EA;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 h1 {
@@ -44,7 +46,7 @@ img {
 }
 
 .container {
-  border: 1px solid black;
+  border: 2px solid #1C1F23;
   border-radius: 4px;
   display: block;
   margin: 0 auto;
@@ -52,7 +54,6 @@ img {
   margin-top: 50px;
   padding: 20px;
   font-family: "Blinker", sans-serif;
-  box-shadow: 5px 5px #bbbbbb;
   background-image: linear-gradient(
     to top,
     #f3e7e9 0%,
