@@ -27,8 +27,7 @@ date.innerHTML = `${day} ${hours}:${minutes}`;
 //City and Temperature
 
 function showTemperature(response) {
-  console.log(response.data)
- document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
  document.querySelector("#wind").innerHTML = response.data.wind.speed;
  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
  document.querySelector("#condition").innerHTML = response.data.weather[0].description;
@@ -38,6 +37,7 @@ document
   .setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description)
 
+ celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -75,5 +75,28 @@ city.addEventListener("submit", showCity);
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", showCurrentTemperature)
 
-search ("Prague");
+function showFareTemp (event) {
+  event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+  let fareTemp = (celsiusTemperature*9)/5+32;
+  temperatureElement.innerHTML = Math.round(fareTemp)
+}
 
+function showCelsiusTemp (event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+
+
+let fareConvert = document.querySelector("#fare");
+fareConvert.addEventListener("click", showFareTemp);
+
+let celsiusConvert = document.querySelector("#celsius");
+celsiusConvert.addEventListener("click", showCelsiusTemp);
+
+
+search("Prague");

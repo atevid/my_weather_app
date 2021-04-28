@@ -33,6 +33,14 @@
         class="form-control"
         id="enterCity">
         </div>
+
+                 <div class="col-6">
+         <input 
+         type="submit" 
+         value="Search"
+         class="form-control btn btn-primary w-100"
+         id="search-input">
+         </div>
         
          <div class="col-6">
              <input 
@@ -41,43 +49,30 @@
             class="form-control btn btn-primary w-100"
              id="currentLocation">
          </div>
-
-         <div class="col-6">
-         <input 
-         type="submit" 
-         value="Search"
-         class="form-control btn btn-dark w-100"
-         id="search-input">
-         </div>
-
-
          </div>
         </form>
-        
         <div class="heading">
-        <h1>
-        <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize">°C</span> 
-        </h1>
+       
+        
+        
+             
 
-        <div class="row">
-            <div class="col-6">
-         <ul class="humidityAndWind">
+           <h1>
+        <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize"> <a href="#" id="celsius" class="units">°C</a> | <a href="#" id="fare" class="units">°F</a></span>  
+        </h1>
+          
+    
+           <ul class="humidityAndWind">
             <li>Humidity: <span id="humidity"></span> % <br>
                 Wind: <span id="wind"></span> km/h</li>    
         </ul>
-            </div>
-            <div class="col-6">
+
           <ul>
               <li class="iconAndCondition">
                  <img src="" alt="" id="icon" class="icon"> 
                  <span id="condition" class="condition"></span>
               </li>
-          </ul>
-            </div>
-        </div>
-        
-
-       
+          </ul>    
         </div>
     </div>
 
@@ -98,6 +93,9 @@
               <li>
                  14. 3. Friday <br>   <i class="fas fa-cloud"></i> 5°C 
              </li>
+             <li>
+                 15. 3. Saturday <br>   <i class="fas fa-cloud"></i> 5°C 
+             </li>
         </ul>
     </div>
     </div>
@@ -105,7 +103,8 @@
     </div>
 
     <p class="codedBy">
-    <a href="https://github.com/atevid/my_weather_app">Open-source code</a>  by Iveta Daňhelová
+    <a href="https://github.com/atevid/my_weather_app"
+    class="codedBy">Open-source code</a> by Iveta Daňhelová
     </p>
     <script src="src/script.js"></script>
 </body>

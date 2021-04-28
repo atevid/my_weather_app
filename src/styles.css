@@ -1,8 +1,8 @@
 .heading {
-  border: 1px solid #1C1F23;
+  border: 1px solid #0C5ED7;
   border-radius: 6px;
-  background-color: #1C1F23;
-  color: #F3E8EA;
+  background-color: #E3EEFD;
+  color: black;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -46,7 +46,7 @@ img {
 }
 
 .container {
-  border: 2px solid #1C1F23;
+  border: 1px solid #0C5ED7;
   border-radius: 4px;
   display: block;
   margin: 0 auto;
@@ -71,17 +71,24 @@ img {
 
 .codedBy {
     text-align: center;
-    padding: 20px;
+    padding-top: 10px;
     font-family: "Blinker", sans-serif;
     text-decoration: none;
 }
 
-.unitsSize {
+.units {
+  text-decoration: none;
   font-size: 20px;
-  position: relative;
-  top: -20px;
-  left: -5px;
+} 
+
+
+.unitsSize {
+ position: relative;
+ top: -20px;
+ left: -5px;
+ font-size: 20px;
 }
+
 
 .col-12 {
   padding-bottom: 10px;
@@ -96,18 +103,31 @@ img {
 }
 
 .humidityAndWind {
-  font-size: 15px;
+  font-size: 13px;
   padding-left: 30px;
-}
-
-.icon {
-  text-align: center;
 }
 
 .condition {
   font-size: 15px;
-  text-align: center;
-  position: relative;
-  top: -20px;
-  right: -10px;
+}
+
+
+
+
+.w-100 {
+  background-color: #E3EEFD;
+  color: #0C5ED7;
+}
+
+.form-control {
+  border: 1px solid #0C5ED7;
+}
+
+.iconAndCondition {
+  border: 1px solid  #0C5ED7;
+  border-radius: 50px;
+  margin-right: 30px;
+  background-color: #002f75;
+  color: white
+;
 }
