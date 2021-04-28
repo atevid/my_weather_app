@@ -1,3 +1,7 @@
+body {
+  background-color: whitesmoke;
+}
+
 .heading {
   border: 1px solid #002F75;
   border-radius: 6px;
