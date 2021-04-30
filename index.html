@@ -58,45 +58,25 @@
              
 
            <h1>
-        <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize"> <a href="#" id="celsius" class="units">°C</a> | <a href="#" id="fare" class="units">°F</a></span>  
+        <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize"> <a href="#" id="celsius" class="units">°C</a> | <a href="#" id="fare" class="units">°F</a></span> <br> <img src="" alt="" id="icon" class="icon">  
         </h1>
           
     
            <ul class="humidityAndWind">
-            <li>Humidity: <span id="humidity"></span> % <br>
-                Wind: <span id="wind"></span> km/h</li>    
+            <li>
+                 <span id="condition" class="condition"></span> <br>
+                 Humidity: <span id="humidity"></span> % <br>
+                Wind: <span id="wind"></span> km/h   
+                 
+                </li>
         </ul>
 
-          <ul>
-              <li class="iconAndCondition">
-                 <img src="" alt="" id="icon" class="icon"> 
-                 <span id="condition" class="condition"></span>
-              </li>
-          </ul>    
+            
         </div>
     </div>
 
     <div class="col-5">
-        <ul class="secondinfo">
-            <li>
-                8. 3. Monday <br>  <i class="fas fa-cloud"></i> 5°C
-             </li>
-             <li>
-                 9. 3. Tuesday <br>  <i class="fas fa-sun"></i> 6°C
-             </li>
-              <li>
-                </i> 10. 3. Wednesday <br> <i class="fas fa-cloud-sun-rain"></i> 7°C
-             </li>
-              <li>
-                 11. 3. Thursday <br>  <i class="fas fa-sun"></i>  5°C
-             </li>
-              <li>
-                 14. 3. Friday <br>   <i class="fas fa-cloud"></i> 5°C 
-             </li>
-             <li>
-                 15. 3. Saturday <br>   <i class="fas fa-cloud"></i> 5°C 
-             </li>
-        </ul>
+       <div class="weather-forecast" id="forecast"></div>
     </div>
     </div>
     </div>
