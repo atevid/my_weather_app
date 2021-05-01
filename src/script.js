@@ -26,6 +26,29 @@ date.innerHTML = `${day} ${hours}:${minutes}`;
 
 //City and Temperature
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="weather-forecast">`;
+  let forecastDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  forecastDays.forEach(function(day) {
+forecastHTML =
+  forecastHTML +
+  ` 
+<ul>
+ <li>
+    ${day}  <img src="" alt=""> 
+    <div class="forecast-temp"> 
+     <span class="temp-fore-max">18°</span>  
+     <span class="temp-fore-min">12°</span> 
+    </div>   
+ </li>
+</ul>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+forecastElement.innerHTML = forecastHTML;}
+
 function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
  document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -36,6 +59,8 @@ document
   .querySelector("#icon")
   .setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description)
+
+
 
  celsiusTemperature = response.data.main.temp;
 }
@@ -99,4 +124,6 @@ let celsiusConvert = document.querySelector("#celsius");
 celsiusConvert.addEventListener("click", showCelsiusTemp);
 
 
-search("Prague");
+search("Prague"); 
+
+displayForecast();
