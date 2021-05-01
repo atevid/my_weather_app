@@ -131,3 +131,15 @@ img {
   color: white
 ;
 }
+
+.weather-forecast {
+  margin-top: 10px;
+}
+
+.temp-fore-min {
+ opacity: 0.6;
+}
+
+.forecast-temp {
+  font-size: 20px;
+}
