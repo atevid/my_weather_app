@@ -85,6 +85,9 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
+
+   celsiusTemperature = response.data.main.temp;
+   
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
  document.querySelector("#wind").innerHTML = response.data.wind.speed;
  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -95,7 +98,7 @@ document
   .setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description)
 
- celsiusTemperature = response.data.main.temp;
+
 
  getForecast(response.data.coord)
 }
@@ -134,36 +137,9 @@ city.addEventListener("submit", showCity);
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", showCurrentTemperature)
 
-function showFareTemp (event) {
-  event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-  
-  fareConvert.classList.add("active")
-  celsiusConvert.classList.remove("active")
-  
-    let fareTemp = (celsiusTemperature*9)/5+32;
-  temperatureElement.innerHTML = Math.round(fareTemp)
-}
-
-function showCelsiusTemp (event) {
-  event.preventDefault();
-
-    celsiusConvert.classList.add("active");
-    fareConvert.classList.remove("active");
-
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
 
 let form = document.querySelector("#enterYourCity");
 form.addEventListener("submit", showCity);
 
-let fareConvert = document.querySelector("#fare");
-fareConvert.addEventListener("click", showFareTemp);
-
-let celsiusConvert = document.querySelector("#celsius");
-celsiusConvert.addEventListener("click", showCelsiusTemp);
 
 search("Praha"); 
