@@ -46,7 +46,6 @@ return days[day];
 
 function displayForecast(response){
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="weather-forecast">`;
   
@@ -96,8 +95,6 @@ document
   .setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description)
 
-
-
  celsiusTemperature = response.data.main.temp;
 
  getForecast(response.data.coord)
@@ -105,16 +102,15 @@ document.querySelector("#icon").setAttribute("alt", response.data.weather[0].des
 
 function search(city) {
 let apiKey = "126c20b90ebb15582267fe5043978b84";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
 }
 
 function showCity(event) {
   event.preventDefault();
-  let city = document.querySelector("#enterCity").value;
-  search(city);
+  let city = document.querySelector("#enterCity");
+  search(city.value);
 }
 
 function searchLocation(position) {
@@ -141,19 +137,28 @@ currentLocationButton.addEventListener("click", showCurrentTemperature)
 function showFareTemp (event) {
   event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-  let fareTemp = (celsiusTemperature*9)/5+32;
+  
+  fareConvert.classList.add("active")
+  celsiusConvert.classList.remove("active")
+  
+    let fareTemp = (celsiusTemperature*9)/5+32;
   temperatureElement.innerHTML = Math.round(fareTemp)
 }
 
 function showCelsiusTemp (event) {
   event.preventDefault();
+
+    celsiusConvert.classList.add("active");
+    fareConvert.classList.remove("active");
+
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
-
+let form = document.querySelector("#enterYourCity");
+form.addEventListener("submit", showCity);
 
 let fareConvert = document.querySelector("#fare");
 fareConvert.addEventListener("click", showFareTemp);
@@ -161,7 +166,4 @@ fareConvert.addEventListener("click", showFareTemp);
 let celsiusConvert = document.querySelector("#celsius");
 celsiusConvert.addEventListener("click", showCelsiusTemp);
 
-
-search("Prague"); 
-
-displayForecast();
+search("Praha"); 
