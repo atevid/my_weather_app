@@ -2,14 +2,9 @@ body {
   background-color: whitesmoke;
 }
 
-.heading {
- 
-  color: black;
-  margin-left: 15px;
-  margin-right: 15px;
-  background-color: #002F75;
-  border-radius: 20px;
-  color: white;
+li {
+  font-size: 20px;
+
 }
 
 h1 {
@@ -34,11 +29,10 @@ ul {
   padding: 0;
   padding-left: 20px;
 }
-
-li {
-  padding: 10px;
-  font-size: larger;
+.currentDate {
+  color: aliceblue;
 }
+
 
 img {
   padding: 0;
@@ -59,7 +53,21 @@ img {
   margin-top: 50px;
   padding: 20px;
   font-family: "Blinker", sans-serif;
-  background-color: #c2d5fa;
+  background-image: url("../images/background03.jpg");
+  background-size: cover;
+  background-position-y: center;
+  color: aliceblue;
+
+}
+
+.heading {
+  background-color: #639F28;
+
+  border-radius: 40px;
+  margin-top: 60px;
+  padding: 10px;
+  background: rgba(51, 170, 51, .4)
+  
 }
 .big {
   font-size: 50px;
@@ -80,7 +88,12 @@ img {
   text-decoration: none;
   font-size: 20px;
 } 
+.temperature {
+  font-size: 50px;
 
+  font-weight: lighter;
+  padding-bottom: 20px;
+}
 
 .unitsSize {
  position: relative;
@@ -96,19 +109,21 @@ img {
 
 .currentDate {
   text-align: center;
-  color:#002F75;
+  color: aliceblue;
   display: block;
   margin: 0 auto;
   font-size: 15px;
 }
 
 .humidityAndWind {
-  font-size: 13px;
-  padding-left: 30px;
+  font-size: 10px;
+position: relative;
+left: -50px;
 }
 
 .condition {
   text-transform: capitalize;
+  font-size: 15px;
 }
 
 
@@ -139,4 +154,8 @@ img {
 
 .forecast-temp {
   font-size: 20px;
+}
+
+.iconAndTemp {
+  padding-left: 30px;
 }

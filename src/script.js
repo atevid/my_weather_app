@@ -52,7 +52,7 @@ function displayForecast(response){
   
   forecast.forEach(function(forecastDay, index) {
 
-if (index < 5) {
+if (index < 6 && index > 0) {
   forecastHTML =
     forecastHTML +
     ` 
@@ -62,10 +62,10 @@ if (index < 5) {
       forecastDay.dt
     )} <br>  <img src="http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
-    }@2x.png" alt="" width="45"> 
+    }@2x.png" alt="" width="45" class="float-left> 
     <div class="forecast-temp"> 
      <span class="temp-fore-max">${Math.round(forecastDay.temp.max)}°</span>  
-     <span class="temp-fore-min">${Math.round(forecastDay.temp.min)}°</span> 
+   
     </div>   
  </li>
 </ul>

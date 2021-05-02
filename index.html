@@ -23,7 +23,7 @@
     <div class="weather-app">
     <span id = "currentDate" class="currentDate"></span>
     <div class="row">
-        <div class="col-7">
+        <div class="col-8">
     <form id="enterYourCity">
         <div class="row due">
             <div class="col-12">
@@ -52,33 +52,33 @@
          </div>
         </form>
         <div class="heading">
-       
-        
-        
-             
-
            <h1>
-        <span id = "city"></span> <span id ="temperature"></span> <span class="unitsSize"> <a href="#" id="celsius" class="units">°C</a> | <a href="#" id="fare" class="units">°F</a></span> <br> <img src="" alt="" id="icon" class="icon">  
+        <span id = "city"></span>    
         </h1>
           
-    
-           <ul class="humidityAndWind">
-            <li>
-                 <span id="condition" class="condition"></span> <br>
-                 Humidity: <span id="humidity"></span> % <br>
-                Wind: <span id="wind"></span> km/h   
+           
+    <div class="row">
+         <div class="col-7 iconAndTemp">
+           <img src="" alt="" id="icon" class="icon">  <span id ="temperature" class="temperature"></span><span class="unitsSize"><a href="#" id="celsius" class="units">°C</a> | <a href="#" id="fare" class="units">°F</a></span>
+         </div>
+        <div class="col-5">
+    <ul class="humidityAndWind">
+            <li class="condition">
+                <span id="condition" class="condition"></span> <br>
+                Humidity: <span id="humidity" class="condition"></span> % <br>
+                Wind: <span id="wind" class="condition"></span> km/h   
                  
                 </li>
         </ul>
-
+        </div>
+       
+</div>
             
         </div>
     </div>
 
-    <div class="col-5">
-       <div class="weather-forecast" id="forecast">
-           
-       </div>
+    <div class="col-4">
+       <div class="weather-forecast" id="forecast"></div>
     </div>
     </div>
     </div>
