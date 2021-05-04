@@ -56,25 +56,22 @@
         <span id = "city"></span>    
         </h1>
           
-           
-    <div class="row">
-        
-        <div class="col-4">  
-           <img src="" alt="" id="icon" class="float-left"> 
-         </div>
-         <div class="col-3">
-            <span id ="temperature" class="temperature"></span><span class="unitsSize">°C</span>
-         </div> 
-        <div class="col-5">
-        <ul class="humidityAndWind">
-            <li class="condition">
-                <span id="condition" class="condition"></span> <br>
-                Humidity: <span id="humidity" class="condition"></span> % <br>
-                Wind: <span id="wind" class="condition"></span> km/h   
-            </li>
-        </ul>
-        </div>
-    </div>
+<div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" /> 
+                <strong id="temperature"></strong
+                  ><span class="units"> °C</span>
+               </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
+
             
         </div>
     </div>
@@ -88,7 +85,7 @@
 
     <p class="codedBy">
     <a href="https://github.com/atevid/my_weather_app"
-    class="codedBy">Open-source code</a> by Iveta Daňhelová
+    class="codedBy" target="_blank">Open-source code</a> by Iveta Daňhelová
     </p>
     <script src="src/script.js"></script>
 </body>

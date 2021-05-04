@@ -91,7 +91,7 @@ function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
  document.querySelector("#wind").innerHTML = response.data.wind.speed;
  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
- document.querySelector("#condition").innerHTML = response.data.weather[0].description;
+
  document.querySelector("#city").innerHTML = response.data.name;
 document
   .querySelector("#icon")
